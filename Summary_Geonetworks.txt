@@ -1,0 +1,35 @@
+## Summary of "Multilevel Visual Analysis of Aggregate Geo-Networks"
+
+# General
+- Modelling of urban phenomena (modeled as geo-networks)
+- Show how phenomena spreads over geogprahical Location, also how geo networks affect each other (Analysis of multiple geo networks at once!)
+- macro Level (all geonetworks), meso Level (compare certain geo networks), Micro Level (individual geo network)
+
+# Limitations of current work
+- current visualizations of geonetworks Show limitations --> multiple Maps, no decomposition for meso or Micro Level possible, limited geo networks shown (context switching needed to compare)
+
+# Proposal in paper
+- multiple-network-on-one-map
+- shared egdes (like metro Maps)
+	- reducing Edge Crossing
+	- Level of Detail Rendering (summarizing end merging edges in different Levels to create better overview/structure; cluster geo networks in different hierachies)
+- Discriminating networks
+	- Coloring algorithm 
+
+# Algorithms used
+- Background layer that contains summary of all geo networks
+- angle Adaption for Routing edges to reduce overlap of networks and get straight edges
+- Crossing minimization algorithms for Edge crossings
+- k Color coloring algorithm to Color edges such that they stay discriminable to their neighbour networks
+- Level of Detail Rendering (placing nodes of networks in an order such that there is no Crossing of edges to other networks that also route through this node)
+
+# User interaction
+- pining and highlighting geo networks (done with opacity turned down, then relevant networks can be turned to opacity 1 again)
+
+# Case studies
+- good Usability 
+
+# Limitations
+- Only on dataset with over 300 geonetworks the algorithms took quite Long (36 sec), in General fast
+- Locations Need to be sparsely distributed, otherwise nodes tend to overlap (possibility to summarize close Locations in more global Level to one - spatial simplification)
+- hierarchical clustering wold perform better if weight/other Attributes are used for similarity measurements.
